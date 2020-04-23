@@ -11,7 +11,6 @@ route.get('/',(req,res)=>{
 
 const cekLogin = function (req, res, next){
   if(!req.session.user){
-    console.log(err)
     res.redirect('/login')
   } else {
     next()

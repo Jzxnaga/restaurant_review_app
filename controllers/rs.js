@@ -3,10 +3,10 @@ const { Restaurant, Cabang, Review, User } = require('../models/index')
 class Controller{
 
     static findAll(req,res){
+        let user = req.session.user
         Restaurant.findAll({})
         .then(data=>{
-            // res.send(data)
-            res.render('rs',{data})
+            res.render('rs',{data,user})
         })
         .catch(err=>{
             res.send(err)
