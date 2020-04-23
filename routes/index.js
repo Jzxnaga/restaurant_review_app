@@ -19,9 +19,13 @@ const cekLogin = function (req, res, next){
 }
 
 
-route.get('/login',usController.login)
+route.get('/login', (req, res) =>{
+  res.render ('login', {err:req.query.err})
+})
 
-route.get('/restaurants',rsController.findAll)
+route.post('/login',usController.login)
+
+route.get('/restaurants',cekLogin,rsController.findAll)
 
 route.get('/restaurant/:restaurant_id/cabang',cbController.findAll)
 
