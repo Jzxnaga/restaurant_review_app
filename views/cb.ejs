@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width , initial-scale=1.0">
-        <title>Movies</title>
+        <title>Cabang</title>
     </head>
 
     <body>
@@ -31,7 +31,7 @@
                     <td>
                     <a href="/cs/<%= el.id %>/edit"><button>Edit</button></a>
                     <a href="/cs/<%= el.id %>/delete" onclick="return confirm('Are you sure?')"><button>Delete</button></a>
-                    <a href="/restaurant/<%= dataRs.id %>/cabang/<%= el.id %>/addreview"><Button>Berikan Review</Button></a>
+                    <a href="/restaurant/<%= dataRs.id %>/cabang/<%= el.id %>/addreview"><Button>To Reviews</Button></a>
                     </td>
                 </tr>
                 <% }) %>
