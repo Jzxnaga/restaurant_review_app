@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang=eng>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Mengedit Review</title>
+    </head>
+
+    <h1>
+        Edit Review : <%= session.name %> (<%= session.username%>)
+    </h1>
+
+    <body>
+
+        <form action='/review/info/<%= idRs %>/<%= data.CabangId %>/<%= session.id %>/change' method='post'>
+        <label for = ""> Review </label>
+            <br>
+            <input type="text" name="review" value="<%= data.review %>"> 
+            <br>
+        <label for = ""> Rating </label>
+            <br>
+            <input type="text" name="rating" value="<%= data.rating %>"> 
+            <br>
+            <button type = "Submit"> Submit </button>
+        </form>
+    </body>
+
+
+</html>

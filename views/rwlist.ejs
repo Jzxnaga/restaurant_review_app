@@ -8,24 +8,35 @@
 
     <body>
         <h1>List Review</h1>
-        <h1>Rating Cabang ini : </h1>
-        <table>
+        <%let jumlah = 0 %>
+        <%for (var i = 0 ; i < data.length ; i ++){ jumlah=+ Number(data[i].rating)} %>
+        <h1>Rating Cabang ini : <%= jumlah %> </h1>
+        <p1> Anda Login Sebagai </p1>
+        <p1><%= session.username %></p1>
+
+
+        <a href = '/review/info/<%=data[0].Cabang.RestaurantId%>/<%=data[0].CabangId%>/add/user/<%=session.id%>'><button>Add Review</button></a>
+
+        <table border=2 >
             <tr>
-                <th>id</th>
-                <th>name</th>
+                <th>name(username)</th>
                 <th>email</th>
                 <th>review</th>
                 <th>rating</th>
+                <th>Action</th>
             </tr>
         <tbody>
             <% data.forEach(el=>{ %>
             <tr>
-                <td><%= el.User.id %></td>
-                <td><%= el.User.name%></td>
+                <td><%= el.getFullInfo()%></td>
                 <td><%= el.User.email%></td>
                 <td><%= el.review%></td>
                 <td><%= el.rating%></td>
+                <td>
+                <a href="/review/info/<%=el.Cabang.RestaurantId%>/<%=el.CabangId%>/<%=el.UserId%>/edit"><button>Edit</button></a>
+                </td>
             </tr>
+
             <% }) %>
         </tbody>
         </table>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=eng>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Cabang</title>
+    </head>
+
+    <body>
+        <h1>Edit Cabang</h1>
+        <% if (error) { %>
+            <p style="color: red;">cannot add : <%= error %></p>
+          <% } %>
+        <form action='/restaurant/<%= data.RestaurantId %>/cabang/list/<%= data.id %>/edit' method='post'>
+            <br>
+            <label for = "">Cabang</label>
+            <br>
+            <input type="text" name="cabang" value="<%= data.cabang %>" > 
+            <br> 
+            <label for = "">No.Telp</label>
+            <br>
+            <input type="text" name="no_telp" value="<%= data.no_telp %>"> 
+            <br>
+            <label for = "">Alamat</label>
+            <br>
+            <input type="text" name="alamat" value="<%= data.alamat %>"> 
+            <br>
+            <br>
+
+            <button type = "Submit"> Submit </button>
+        </form>
+
+
+
+
+
+    </body>
+
+
+
+</html>

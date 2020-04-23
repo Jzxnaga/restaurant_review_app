@@ -4,7 +4,7 @@ class Controller{
 
     static findAll(req,res){
         let user = req.session.user
-        Restaurant.findAll({})
+        Restaurant.findAll({include : {model : Cabang }})
         .then(data=>{
             res.render('rs',{data,user})
         })

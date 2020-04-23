@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <h1>List Cabang Restaurant</h1>
+        <h1> Reviews Cabang</h1>
         <h1><%= dataRs.name %> </h1>
         <h1>Owner:<%= dataRs.owner %></h1>
         <table border = "2">
@@ -29,8 +29,7 @@
                     <td><%= el.no_telp%></td>
                     <td><%= el.alamat %></td>
                     <td>
-                    <a href="/cs/<%= el.id %>/edit"><button>Edit</button></a>
-                    <a href="/cs/<%= el.id %>/delete" onclick="return confirm('Are you sure?')"><button>Delete</button></a>
+                    <a href='/restaurant/<%= el.RestaurantId %>/cabang/reviews/<%= el.id %>'><button>Lihat Review di Cabang ini</button></a>
                     </td>
                 </tr>
                 <% }) %>

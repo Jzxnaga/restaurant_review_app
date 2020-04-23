@@ -17,6 +17,7 @@ class Controller{
             return bcrypt.compare(password, data.password)
         .then(pass => {
             req.session.user = {
+              id : temp.id,
               name : temp.name,
               birth : temp.birth,
               email : temp.email,
@@ -24,7 +25,7 @@ class Controller{
               
             }
             console.log('berhasil')
-            res.redirect('/restaurants')
+            res.redirect('/')
           });
         })
         .catch (err =>{

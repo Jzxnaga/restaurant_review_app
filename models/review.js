@@ -4,6 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   const Model = Sequelize.Model
 
   class Review extends Model{
+    getFullInfo(){
+      return `${this.User.name} (${this.User.username})`
+    }
 
   }
 
