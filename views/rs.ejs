@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang=eng>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Movies</title>
+    </head>
+
+    <body>
+        <h1>Restaurant</h1>
+
+        <table border = "2">
+            <thead>
+                <tr>
+                    <th>Id </th>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>E-mail</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% data.forEach(el=>{ %>
+                <tr>
+                    <td><%= el.id %></td>
+                    <td><%= el.name%></td>
+                    <td><%= el.owner%></td>
+                    <td><%= el.email %></td>
+                    <td>
+                    <a href="/cs/<%= el.id %>/edit"><button>Edit</button></a>
+                    <a href="/cs/<%= el.id %>/delete" onclick="return confirm('Are you sure?')"><button>Delete</button></a>
+                    <a href="/restaurant/<%= el.id %>/cabang"><Button>Lihat Cabang</Button></a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+
+
+
+
+
+
+</html>

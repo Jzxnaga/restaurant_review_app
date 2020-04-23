@@ -4,18 +4,33 @@ const cbController = require('../controllers/cb')
 const rwController = require('../controllers/rw')
 const usController = require('../controllers/us')
 
-// const cekLogin = function (req, res, next){
-//   if(!req.session.user){
-//     console.log(err)
-//     res.redirect('/login')
-//   } else {
-//     next()
-//   }
-// }
 
+route.get('/',(req,res)=>{
+    res.render('home')
+})
+
+const cekLogin = function (req, res, next){
+  if(!req.session.user){
+    console.log(err)
+    res.redirect('/login')
+  } else {
+    next()
+  }
+}
+
+
+route.get('/login',usController.login)
 
 route.get('/restaurants',rsController.findAll)
 
-route.get('/restaurant/:id/cabang',cbController.findAll)
+route.get('/restaurant/:restaurant_id/cabang',cbController.findAll)
+
+route.get('/restaurant/:restaurant_id/cabang/:cabang_id',cbController.findAll)
+
+route.get('/restaurant/:restaurant_id/cabang/:cabang_id/addreview',rwController.toReview)
+
+
+
+
 
 module.exports=route

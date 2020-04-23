@@ -7,9 +7,6 @@ module.exports = (sequelize, DataTypes) => {
 
   }
 
-
-
-
   Cabang.init({
     RestaurantId: DataTypes.INTEGER,
     cabang: DataTypes.INTEGER,

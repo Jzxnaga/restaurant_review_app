@@ -5,7 +5,8 @@ class Controller{
     static findAll(req,res){
         Restaurant.findAll({})
         .then(data=>{
-            res.send(data)
+            // res.send(data)
+            res.render('rs',{data})
         })
         .catch(err=>{
             res.send(err)

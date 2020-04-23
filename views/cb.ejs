@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang=eng>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Movies</title>
+    </head>
+
+    <body>
+        <h1>List Cabang Restaurant</h1>
+        <h1><%= dataRs.name %> </h1>
+        <h1>Owner:<%= dataRs.owner %></h1>
+        <table border = "2">
+            <thead>
+                <tr>
+                    <th>Id </th>
+                    <th>Cabang</th>
+                    <th>No.Telp</th>
+                    <th>Alamat</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% dataCb.forEach(el=>{ %>
+                <tr>
+                    <td><%= el.id %></td>
+                    <td><%= el.cabang%></td>
+                    <td><%= el.notelp%></td>
+                    <td><%= el.alamat %></td>
+                    <td>
+                    <a href="/cs/<%= el.id %>/edit"><button>Edit</button></a>
+                    <a href="/cs/<%= el.id %>/delete" onclick="return confirm('Are you sure?')"><button>Delete</button></a>
+                    <a href="/restaurant/<%= dataRs.id %>/cabang/<%= el.id %>/addreview"><Button>Berikan Review</Button></a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
