@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {sequelize});
   Cabang.associate = function(models) {
     // associations can be defined here
-    Cabang.belongsTo(model.Restaurant,{foreignKey:'RestaurantId'})
+    Cabang.belongsTo(models.Restaurant, {foreignKey:'RestaurantId'})
     Cabang.belongsToMany(models.User,{
       through:models.Review ,foreignKey:'CabangId'})
 

@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     password: DataTypes.STRING
   }, {sequelize});
+
   Restaurant.associate = function(models) {
     // associations can be defined here
     Restaurant.hasMany(models.Cabang,{foreignKey:'RestaurantId'})
