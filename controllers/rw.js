@@ -59,7 +59,6 @@ class Controller{
                     condition = false
                 }
             }
-            console.log(condition)
             if(condition == false){
             res.redirect(`/restaurant/${idRs}/cabang/reviews/${idCb}`)
             }
@@ -88,6 +87,7 @@ class Controller{
         let idUs = session.id
         let body = req.body
 
+
         body.CabangId = idCb
         body.UserId = idUs
         body.review = body.review
@@ -95,6 +95,7 @@ class Controller{
         body.createdAt = new Date()
         body.updatedAt = new Date()
 
+        console.log(body)
         Review.create(body)
         .then(()=>{
             res.redirect(`/restaurant/${idRs}/cabang/reviews/${idCb}`)
