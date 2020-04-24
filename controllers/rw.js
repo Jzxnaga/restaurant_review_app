@@ -18,14 +18,27 @@ class Controller{
         let idCb = req.params.cabang_id
         let error = req.query.error
         let session = req.session.user
+        let jumlah = 0;
+        let mean = 0;
 
         Review.findAll({
             where:{CabangId:idCb},
             include : [{model : User },{model : Cabang}]
         })
         .then(data=>{
-            // res.send(data)
-            res.render('rwlist',{data,error,session})
+            for(var i = 0 ; i < data.length ; i++){
+                jumlah += Number(data[i].rating)
+            }
+            mean = jumlah/data.length
+            
+            if(data.length == 0){
+                mean = "Belum ada"
+                console.log (mean)
+            } else {
+            mean = mean = jumlah/data.length
+            }
+    
+            res.render('rwlist',{data,error,session,mean,idCb,idRs})
         })
         .catch(err=>{
             res.send(err)
